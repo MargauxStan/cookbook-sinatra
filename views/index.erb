@@ -1,0 +1,12 @@
+<% @recipes.each_with_index do |recipe, index| %>
+  <li>
+    <%= recipe.name %>
+    <%= recipe.description %>
+    <%= recipe.rating %>
+    <%= recipe.duration %>
+  </li>
+ <a data-method="delete" href=<%="delete/#{index}"%>>delete</a>
+<% end %>
+<div>
+  <a id="new_recipe" href='new'>New recipe</a>
+</div>
