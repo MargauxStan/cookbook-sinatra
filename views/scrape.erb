@@ -1,5 +1,6 @@
-<%@array.each do |recipe|%>
+<%@array.each_with_index do |recipe, index|%>
   <li> 
   <%="#{recipe.name}: #{recipe.description}"%>
   </li>
+  <a href=<%="add/#{index}"%>>add</a>
 <%end%>

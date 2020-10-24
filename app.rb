@@ -24,6 +24,15 @@ get '/delete/:index' do
   redirect '/'
 end
 
+get '/add/:index' do
+  scraper = Scraper.new(params[:ingredient])
+  @array = scraper.call
+  index = params[:index].to_i
+  recipe = @array[index]
+  cookbook.add_recipe(recipe)
+  redirect '/'
+end
+
 post '/recipe' do
   recipe = Recipe.new(params[:name], params[:description], params[:rating], params[:duration])
   cookbook.add_recipe(recipe)

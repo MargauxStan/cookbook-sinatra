@@ -1,5 +1,5 @@
 require_relative 'recipe'
-#require 'nokogiri'
+require 'nokogiri'
 require 'open-uri'
 
 class Scraper 
