@@ -10,3 +10,15 @@
 <div>
   <a id="new_recipe" href='new'>New recipe</a>
 </div>
+<div>
+  <p>Pick a recipe on Marmiton</p>
+  <form action="/scrape" method="post" >
+    <div>
+      <label for="ingredient">Enter an ingredient </label>
+      <input type="text" name="ingredient" id="ingredient" required>
+    </div>
+    <div>
+       <input type="submit" value="Send!">
+    </div> 
+  </form>
+</div>

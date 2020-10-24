@@ -1,5 +1,6 @@
 require_relative 'recipe'
 require_relative 'cookbook'
+require_relative 'scraper'
 require "sinatra"
 require "sinatra/reloader" if development?
 require "pry-byebug"
@@ -32,4 +33,10 @@ end
 get '/' do
   @recipes = cookbook.all
   erb :index
+end
+
+post '/scrape' do 
+  scraper = Scraper.new(params[:ingredient])
+  @array = scraper.call
+  erb :scrape
 end
